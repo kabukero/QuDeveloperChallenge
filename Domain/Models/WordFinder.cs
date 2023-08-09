@@ -38,7 +38,7 @@ namespace Domain.Models
                 }
             }
 
-            return occurrencesMap.Keys;
+            return OrderOccurrencesMap(occurrencesMap);
         }
 
         private static int CountOccurrences(string word, string wordToFind)
@@ -64,6 +64,16 @@ namespace Domain.Models
             {
                 occurrencesMap.Add(wordToFind, count);
             }
+        }
+
+        private static IEnumerable<string> OrderOccurrencesMap(IDictionary<string, int> occurrencesMap)
+        {
+            return (from entry in occurrencesMap
+                    orderby entry.Value descending
+                    select entry
+                    ).Take(10)
+                    .ToDictionary(pair => pair.Key, pair => pair.Value)
+                    .Keys.ToList();
         }
     }
 }
