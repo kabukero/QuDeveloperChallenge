@@ -23,6 +23,7 @@ namespace Domain.Models
 
         public static IEnumerable<string> CountWords(IEnumerable<string> wordsInput, IEnumerable<string> wordsToTest)
         {
+            IDictionary<string, int> occurrencesMap = new Dictionary<string, int>();
 
             foreach (string wordToFind in wordsToTest)
             {
@@ -33,10 +34,11 @@ namespace Domain.Models
                     if (count == 0)
                         continue;
 
+                    UpdateOccurrencesMap(occurrencesMap, wordToFind, count);
                 }
             }
 
-            return null;
+            return occurrencesMap.Keys;
         }
 
         private static int CountOccurrences(string word, string wordToFind)
@@ -50,6 +52,18 @@ namespace Domain.Models
             }
 
             return count;
+        }
+
+        private static void UpdateOccurrencesMap(IDictionary<string, int> occurrencesMap, string wordToFind, int count)
+        {
+            if (occurrencesMap.ContainsKey(wordToFind))
+            {
+                occurrencesMap[wordToFind] += count;
+            }
+            else
+            {
+                occurrencesMap.Add(wordToFind, count);
+            }
         }
     }
 }
