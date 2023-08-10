@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities.Helpers;
 
 namespace Domain.Models
 {
@@ -13,11 +14,13 @@ namespace Domain.Models
 
         public WordFinder(IEnumerable<string> matrix)
         {
+            GuardHelper.ThrowIfNull<IEnumerable<string>>(matrix, "Matrix is null", nameof(matrix));
             this.matrix = matrix;
         }
 
         public IEnumerable<string> Find(IEnumerable<string> wordstream)
         {
+            GuardHelper.ThrowIfNull<IEnumerable<string>>(matrix, "wordstream is null", nameof(matrix));
             return CountWords(matrix, wordstream);
         }
 
