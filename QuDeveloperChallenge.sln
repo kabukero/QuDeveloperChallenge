@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordFinderUnitTest", "WordFinderUnitTest\WordFinderUnitTest.csproj", "{D3684982-EFD1-4535-B4E5-836C1DF92BCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkingTestingApp", "BenchmarkingTestingApp\BenchmarkingTestingApp.csproj", "{180A2DE0-6F48-4044-9B9E-99468CC74DE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D3684982-EFD1-4535-B4E5-836C1DF92BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3684982-EFD1-4535-B4E5-836C1DF92BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3684982-EFD1-4535-B4E5-836C1DF92BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180A2DE0-6F48-4044-9B9E-99468CC74DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180A2DE0-6F48-4044-9B9E-99468CC74DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180A2DE0-6F48-4044-9B9E-99468CC74DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180A2DE0-6F48-4044-9B9E-99468CC74DE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
